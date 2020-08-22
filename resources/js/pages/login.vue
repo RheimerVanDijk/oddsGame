@@ -99,10 +99,6 @@ export default {
     }
   },
   methods: {
-    login() {
-      console.log("login")
-      this.$router.push("dashboard")
-    },
     register() {
       this.$auth.register({
         data: {
@@ -131,7 +127,7 @@ export default {
       var app = this
       this.$auth
         .login({
-          params: {
+          data: {
             email: app.email,
             password: app.password,
           },
