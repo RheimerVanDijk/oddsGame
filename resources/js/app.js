@@ -1,11 +1,30 @@
-require("./bootstrap");
+import "../sass/app.scss"
+import "./bootstrap"
 
-window.Vue = require("vue");
+import axios from "axios"
+import Vue from "vue"
+import VueAuth from "@websanova/vue-auth"
+import VueAxios from "vue-axios"
+import VueRouter from "vue-router"
+import Index from "./Index"
+import auth from "./auth"
+import store from "./store/store"
 
-import App from "./App.vue";
+import router from "./router/router"
 
-Vue.config.productionTip = false;
+window.Vue = Vue
 
+Vue.router = router
+Vue.use(VueRouter)
+
+Vue.use(VueAxios, axios)
+axios.defaults.baseURL = `/api`
+Vue.use(VueAuth, auth)
+
+// Load Index
+Vue.component("index", Index)
 const app = new Vue({
-    render: h => h(App)
-}).$mount("#app");
+  el: "#app",
+  router,
+  store,
+})

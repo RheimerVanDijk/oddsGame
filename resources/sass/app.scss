@@ -1,3 +1,4 @@
-body {
-    background-color: red;
-}
+@import "./style/bootstrap.scss";
+@import "./style/gameList.scss";
+@import "./style/login.scss";
+@import "./style/betModel.scss";
