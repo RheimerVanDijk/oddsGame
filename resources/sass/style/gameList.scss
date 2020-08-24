@@ -19,3 +19,17 @@
     background-color: #ebebeb;
   }
 }
+
+@media (max-width: 576px) {
+  .addGameInputs {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .adminGamesControls {
+    button {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+}

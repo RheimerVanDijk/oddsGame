@@ -2,7 +2,7 @@
   <div>
     <navigation></navigation>
     <div class="games">
-      <ul class="list-group game-items" v-if="games != null">
+      <ul class="list-group game-items adminGamesControls" v-if="games != null">
         <game
           v-for="(game, index) in games"
           :key="index"

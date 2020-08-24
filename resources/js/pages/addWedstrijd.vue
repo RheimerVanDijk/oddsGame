@@ -2,7 +2,7 @@
   <div>
     <navigation></navigation>
     <div class="container-fluid mt-3">
-      <div class="row mb-3">
+      <div class="row mb-3 addGameInputs">
         <div class="col">
           <input
             type="text"
@@ -28,7 +28,7 @@
           />
         </div>
       </div>
-      <div class="row mb-3">
+      <div class="row mb-3 addGameInputs">
         <div class="col">
           <input
             type="text"
@@ -82,9 +82,9 @@ export default {
       thuis: "",
       uit: "",
       tijd: "",
-      win: 0,
-      gelijk: 0,
-      verlies: 0,
+      win: "",
+      gelijk: "",
+      verlies: "",
     }
   },
   methods: {

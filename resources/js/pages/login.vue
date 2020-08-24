@@ -1,7 +1,7 @@
 <template>
   <div class="container-fluid ">
     <div class="row">
-      <div class="col"></div>
+      <div class="col column-display"></div>
       <div class="col">
         <div class="form-container d-flex align-items-center">
           <form style="width: 100%;" v-if="loginState">
@@ -77,7 +77,7 @@
           </form>
         </div>
       </div>
-      <div class="col"></div>
+      <div class="col column-display"></div>
     </div>
   </div>
 </template>
