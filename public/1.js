@@ -103,16 +103,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   computed: {
     SelectedGameObject: function SelectedGameObject() {
@@ -447,7 +437,7 @@ var render = function() {
                 attrs: { type: "button", "data-dismiss": "modal" },
                 on: { click: _vm.closeModel }
               },
-              [_vm._v("\n          Close\n        ")]
+              [_vm._v("Close")]
             ),
             _vm._v(" "),
             _c(
@@ -457,7 +447,7 @@ var render = function() {
                 attrs: { type: "button" },
                 on: { click: _vm.bid }
               },
-              [_vm._v("\n          Bieden\n        ")]
+              [_vm._v("Inleggen")]
             )
           ])
         ])

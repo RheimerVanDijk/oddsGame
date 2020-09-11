@@ -17,7 +17,7 @@ class CreateGameTable extends Migration
             $table->bigIncrements('id');
             $table->string('thuis');
             $table->string('uit');
-            $table->string('tijd');
+            $table->timestamp('tijd');
             $table->decimal('win', 4, 2);
             $table->decimal('gelijk', 4, 2);
             $table->decimal('verlies', 4, 2);

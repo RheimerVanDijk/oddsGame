@@ -28,9 +28,7 @@
           <h5>{{ SelectedGameObject.thuis }} - {{ SelectedGameObject.uit }}</h5>
           <div class="input-group mb-3 d-flex">
             <div class="input-group-prepend">
-              <span class="input-group-text" id="basic-addon1"
-                >Winnen | {{ SelectedGameObject.win }}</span
-              >
+              <span class="input-group-text" id="basic-addon1">Winnen | {{ SelectedGameObject.win }}</span>
             </div>
             <input
               type="number"
@@ -41,15 +39,14 @@
               v-model="win"
               min="0.5"
             />
-            <small class="form-text text-muted w-100"
-              >Je maakt kan op: ${{ winMakes }}</small
-            >
+            <small class="form-text text-muted w-100">Je maakt kan op: ${{ winMakes }}</small>
           </div>
           <div class="input-group mb-3">
             <div class="input-group-prepend">
-              <span class="input-group-text" id="basic-addon1"
-                >Gelijk | {{ SelectedGameObject.gelijk }}</span
-              >
+              <span
+                class="input-group-text"
+                id="basic-addon1"
+              >Gelijk | {{ SelectedGameObject.gelijk }}</span>
             </div>
             <input
               type="number"
@@ -60,15 +57,14 @@
               v-model="gelijk"
               min="0.5"
             />
-            <small class="form-text text-muted w-100"
-              >Je maakt kan op: ${{ gelijkMakes }}</small
-            >
+            <small class="form-text text-muted w-100">Je maakt kan op: ${{ gelijkMakes }}</small>
           </div>
           <div class="input-group mb-3">
             <div class="input-group-prepend">
-              <span class="input-group-text" id="basic-addon1"
-                >verliezen | {{ SelectedGameObject.verlies }}</span
-              >
+              <span
+                class="input-group-text"
+                id="basic-addon1"
+              >verliezen | {{ SelectedGameObject.verlies }}</span>
             </div>
             <input
               type="number"
@@ -79,9 +75,7 @@
               v-model="verlies"
               min="0.5"
             />
-            <small class="form-text text-muted w-100"
-              >Je maakt kan op: ${{ verliesMakes }}</small
-            >
+            <small class="form-text text-muted w-100">Je maakt kan op: ${{ verliesMakes }}</small>
           </div>
         </div>
         <div class="modal-footer">
@@ -90,12 +84,8 @@
             class="btn btn-secondary"
             data-dismiss="modal"
             @click="closeModel"
-          >
-            Close
-          </button>
-          <button type="button" class="btn btn-primary" @click="bid">
-            Bieden
-          </button>
+          >Close</button>
+          <button type="button" class="btn btn-primary" @click="bid">Inleggen</button>
         </div>
       </div>
     </div>
@@ -186,11 +176,11 @@ export default {
           bid: bidsArray.bid,
           game: this.SelectedGameObject.id,
         },
-      }).then(res => {
+      }).then((res) => {
         this.$http({
           url: `games/stacks`,
           method: "get",
-        }).then(res => {
+        }).then((res) => {
           this.$store.commit("mutateBetModelState", false)
           this.$store.commit("mutateSelectedGameObject", {})
           console.log(res.data)

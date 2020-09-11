@@ -4,54 +4,24 @@
     <div class="container-fluid mt-3">
       <div class="row mb-3 addGameInputs">
         <div class="col">
-          <input
-            type="text"
-            class="form-control"
-            placeholder="Thuis team"
-            v-model="thuis"
-          />
+          <input type="text" class="form-control" placeholder="Thuis team" v-model="thuis" />
         </div>
         <div class="col">
-          <input
-            type="text"
-            class="form-control"
-            placeholder="Uit team"
-            v-model="uit"
-          />
+          <input type="text" class="form-control" placeholder="Uit team" v-model="uit" />
         </div>
         <div class="col">
-          <input
-            type="time"
-            class="form-control"
-            placeholder="Tijd"
-            v-model="tijd"
-          />
+          <input type="datetime-local" class="form-control" placeholder="Tijd" v-model="tijd" />
         </div>
       </div>
       <div class="row mb-3 addGameInputs">
         <div class="col">
-          <input
-            type="text"
-            class="form-control"
-            placeholder="Win kansen"
-            v-model="win"
-          />
+          <input type="text" class="form-control" placeholder="Win kansen" v-model="win" />
         </div>
         <div class="col">
-          <input
-            type="text"
-            class="form-control"
-            placeholder="Gelijk kansen"
-            v-model="gelijk"
-          />
+          <input type="text" class="form-control" placeholder="Gelijk kansen" v-model="gelijk" />
         </div>
         <div class="col">
-          <input
-            type="text"
-            class="form-control"
-            placeholder="Verlies kansen"
-            v-model="verlies"
-          />
+          <input type="text" class="form-control" placeholder="Verlies kansen" v-model="verlies" />
         </div>
       </div>
       <div class="row">
@@ -62,9 +32,7 @@
             class="btn btn-success"
             style="width: 100%;"
             @click="makeGame"
-          >
-            Wedstrijd toevoegen
-          </button>
+          >Wedstrijd toevoegen</button>
         </div>
         <div class="col"></div>
       </div>
@@ -89,6 +57,10 @@ export default {
   },
   methods: {
     makeGame() {
+      // console.log(this.tijd)
+      const test = this.tijd
+      console.log(test)
+
       this.$http({
         url: `games/create`,
         method: "POST",
@@ -100,9 +72,16 @@ export default {
           gelijk: this.gelijk,
           verlies: this.verlies,
         },
-      }).then(res => {
+      }).then((res) => {
         console.log(res)
       })
+
+      this.thuis = ""
+      this.uit = ""
+      this.tijd = ""
+      this.win = ""
+      this.gelijk = ""
+      this.verlies = ""
     },
   },
 }
