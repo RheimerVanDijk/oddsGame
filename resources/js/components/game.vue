@@ -44,10 +44,28 @@ export default {
     }
   },
   mounted() {
-    console.log(this.gameData)
+    const monthNames = [
+      "January",
+      "February",
+      "March",
+      "April",
+      "May",
+      "June",
+      "July",
+      "August",
+      "September",
+      "October",
+      "November",
+      "December",
+    ]
+    const splitDate = this.gameData.tijd.split(/-|\s|:/g)
 
     const dateNow = new Date().getTime()
-    const dateGame = new Date(this.gameData.tijd).getTime()
+    const dateGame = new Date(
+      `${monthNames[parseInt(splitDate[1] - 1)]}-${splitDate[2]}-${
+        splitDate[0]
+      } ${splitDate[2]}:${splitDate[3]}:${splitDate[5]}`
+    ).getTime()
 
     if (dateNow < dateGame) {
     } else {
