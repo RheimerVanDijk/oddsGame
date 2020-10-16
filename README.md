@@ -1,3 +1,5 @@
+# Odds game
+
 A vue/ laravel game like TOTO where you can bet on added sprots game and win some fake money.
 
 eploy laravel onto vps:
