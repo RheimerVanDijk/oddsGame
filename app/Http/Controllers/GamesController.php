@@ -76,7 +76,6 @@ class GamesController extends Controller
     }
 
     public function finishGame(Request $request) {
-
         $bidType = $request->type;
         $gameId = $request->id;
         $test = [];
