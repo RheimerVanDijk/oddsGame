@@ -26,6 +26,7 @@
     "dependencies": {
         "@websanova/vue-auth": "^3.2.3-beta",
         "es6-promise": "^4.2.8",
+        "node-forge": "^0.10.0",
         "vue-axios": "^2.1.5",
         "vue-router": "^3.4.2",
         "vuex": "^3.5.1"
