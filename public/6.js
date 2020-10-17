@@ -1,1 +1,194 @@
-(window.webpackJsonp=window.webpackJsonp||[]).push([[6],{23:function(t,e,i){"use strict";i.r(e);var s={components:{navigation:function(){return i.e(0).then(i.bind(null,51))}},data:function(){return{thuis:"",uit:"",tijd:"",win:"",gelijk:"",verlies:""}},methods:{makeGame:function(){var t=this.tijd;console.log(t),this.$http({url:"games/create",method:"POST",data:{thuis:this.thuis,uit:this.uit,tijd:this.tijd,win:this.win,gelijk:this.gelijk,verlies:this.verlies}}).then((function(t){console.log(t)})),this.thuis="",this.uit="",this.tijd="",this.win="",this.gelijk="",this.verlies=""}}},a=i(0),o=Object(a.a)(s,(function(){var t=this,e=t.$createElement,i=t._self._c||e;return i("div",[i("navigation"),t._v(" "),i("div",{staticClass:"container-fluid mt-3"},[i("div",{staticClass:"row mb-3 addGameInputs"},[i("div",{staticClass:"col"},[i("input",{directives:[{name:"model",rawName:"v-model",value:t.thuis,expression:"thuis"}],staticClass:"form-control",attrs:{type:"text",placeholder:"Thuis team"},domProps:{value:t.thuis},on:{input:function(e){e.target.composing||(t.thuis=e.target.value)}}})]),t._v(" "),i("div",{staticClass:"col"},[i("input",{directives:[{name:"model",rawName:"v-model",value:t.uit,expression:"uit"}],staticClass:"form-control",attrs:{type:"text",placeholder:"Uit team"},domProps:{value:t.uit},on:{input:function(e){e.target.composing||(t.uit=e.target.value)}}})]),t._v(" "),i("div",{staticClass:"col"},[i("input",{directives:[{name:"model",rawName:"v-model",value:t.tijd,expression:"tijd"}],staticClass:"form-control",attrs:{type:"datetime-local",placeholder:"Tijd"},domProps:{value:t.tijd},on:{input:function(e){e.target.composing||(t.tijd=e.target.value)}}})])]),t._v(" "),i("div",{staticClass:"row mb-3 addGameInputs"},[i("div",{staticClass:"col"},[i("input",{directives:[{name:"model",rawName:"v-model",value:t.win,expression:"win"}],staticClass:"form-control",attrs:{type:"text",placeholder:"Win kansen"},domProps:{value:t.win},on:{input:function(e){e.target.composing||(t.win=e.target.value)}}})]),t._v(" "),i("div",{staticClass:"col"},[i("input",{directives:[{name:"model",rawName:"v-model",value:t.gelijk,expression:"gelijk"}],staticClass:"form-control",attrs:{type:"text",placeholder:"Gelijk kansen"},domProps:{value:t.gelijk},on:{input:function(e){e.target.composing||(t.gelijk=e.target.value)}}})]),t._v(" "),i("div",{staticClass:"col"},[i("input",{directives:[{name:"model",rawName:"v-model",value:t.verlies,expression:"verlies"}],staticClass:"form-control",attrs:{type:"text",placeholder:"Verlies kansen"},domProps:{value:t.verlies},on:{input:function(e){e.target.composing||(t.verlies=e.target.value)}}})])]),t._v(" "),i("div",{staticClass:"row"},[i("div",{staticClass:"col"}),t._v(" "),i("div",{staticClass:"col"},[i("button",{staticClass:"btn btn-success",staticStyle:{width:"100%"},attrs:{type:"button"},on:{click:t.makeGame}},[t._v("Wedstrijd toevoegen")])]),t._v(" "),i("div",{staticClass:"col"})])])],1)}),[],!1,null,null,null);e.default=o.exports}}]);
+(window["webpackJsonp"] = window["webpackJsonp"] || []).push([[6],{
+
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/pages/adminPage.vue?vue&type=script&lang=js&":
+/*!***************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/pages/adminPage.vue?vue&type=script&lang=js& ***!
+  \***************************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+/* harmony default export */ __webpack_exports__["default"] = ({
+  components: {
+    navigation: function navigation() {
+      return __webpack_require__.e(/*! import() */ 0).then(__webpack_require__.bind(null, /*! ../components/nav */ "./resources/js/components/nav.vue"));
+    },
+    game: function game() {
+      return __webpack_require__.e(/*! import() */ 3).then(__webpack_require__.bind(null, /*! ../components/controlGames */ "./resources/js/components/controlGames.vue"));
+    }
+  },
+  data: function data() {
+    return {
+      games: null
+    };
+  },
+  computed: {
+    getUpdateList: function getUpdateList() {
+      return this.$store.getters.getUpdateList;
+    }
+  },
+  watch: {
+    getUpdateList: function getUpdateList() {
+      var _this = this;
+
+      this.games = null;
+      this.$http({
+        url: "games/getAll",
+        method: "get"
+      }).then(function (res) {
+        _this.games = res.data;
+      });
+      this.$store.commit("mutateUpdateList", false);
+    }
+  },
+  mounted: function mounted() {
+    var _this2 = this;
+
+    this.$http({
+      url: "games/getAll",
+      method: "get"
+    }).then(function (res) {
+      _this2.games = res.data;
+    });
+    this.$http({
+      url: "games/stacks",
+      method: "get"
+    }).then(function (res) {
+      console.log(res.data);
+
+      _this2.$store.commit("mutateStacks", res.data);
+    });
+  }
+});
+
+/***/ }),
+
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/pages/adminPage.vue?vue&type=template&id=c4495736&":
+/*!*******************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/pages/adminPage.vue?vue&type=template&id=c4495736& ***!
+  \*******************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "div",
+    [
+      _c("navigation"),
+      _vm._v(" "),
+      _c("div", { staticClass: "games" }, [
+        _vm.games != null
+          ? _c(
+              "ul",
+              { staticClass: "list-group game-items adminGamesControls" },
+              _vm._l(_vm.games, function(game, index) {
+                return _c("game", { key: index, attrs: { gameData: game } })
+              }),
+              1
+            )
+          : _vm._e()
+      ])
+    ],
+    1
+  )
+}
+var staticRenderFns = []
+render._withStripped = true
+
+
+
+/***/ }),
+
+/***/ "./resources/js/pages/adminPage.vue":
+/*!******************************************!*\
+  !*** ./resources/js/pages/adminPage.vue ***!
+  \******************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _adminPage_vue_vue_type_template_id_c4495736___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./adminPage.vue?vue&type=template&id=c4495736& */ "./resources/js/pages/adminPage.vue?vue&type=template&id=c4495736&");
+/* harmony import */ var _adminPage_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./adminPage.vue?vue&type=script&lang=js& */ "./resources/js/pages/adminPage.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _adminPage_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _adminPage_vue_vue_type_template_id_c4495736___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _adminPage_vue_vue_type_template_id_c4495736___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/pages/adminPage.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/pages/adminPage.vue?vue&type=script&lang=js&":
+/*!*******************************************************************!*\
+  !*** ./resources/js/pages/adminPage.vue?vue&type=script&lang=js& ***!
+  \*******************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_adminPage_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/babel-loader/lib??ref--4-0!../../../node_modules/vue-loader/lib??vue-loader-options!./adminPage.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/pages/adminPage.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_adminPage_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/js/pages/adminPage.vue?vue&type=template&id=c4495736&":
+/*!*************************************************************************!*\
+  !*** ./resources/js/pages/adminPage.vue?vue&type=template&id=c4495736& ***!
+  \*************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_adminPage_vue_vue_type_template_id_c4495736___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../node_modules/vue-loader/lib??vue-loader-options!./adminPage.vue?vue&type=template&id=c4495736& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/pages/adminPage.vue?vue&type=template&id=c4495736&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_adminPage_vue_vue_type_template_id_c4495736___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_adminPage_vue_vue_type_template_id_c4495736___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
+
+/***/ })
+
+}]);
